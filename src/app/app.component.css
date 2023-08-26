@@ -1,0 +1,19 @@
+.tree{
+    padding : 6px;
+    width: fit-content;
+    margin-left: 40px;
+    margin-top: 10px
+}
+
+.tree:hover{
+    border: 1px solid black;
+}
+
+.tree.btn1{
+   display: none;
+}
+
+.tree.btn1:hover{
+    display: block;
+}
+

@@ -1,0 +1,21 @@
+<div class="tree">
+    <div (mouseenter)="hover=true" (mouseleave)="hover=false">
+        <div *ngIf="node.type == 'folder'">
+            <i class="bi bi-folder2-open"></i>
+        </div>
+        <div *ngIf="node.type == 'file'">
+            <i class="bi bi-file-earmark"></i>
+        </div>
+        {{node.name}}
+        <button *ngIf="node.type == 'folder' && hover" (click)="addfolder()" class="btn btn-success">add</button>
+        <button *ngIf="hover" (click)="delete()" class="btn btn-danger">delete</button>
+    </div>
+</div>
+
+<div class="tree_view" *ngFor="let child of node.children; let i=index" style="padding: 8px;">
+    <app-tree-node [node]="child" [data]="node"></app-tree-node>
+</div>
+
+<div *ngIf="node.active">
+    <app-edit (outputfeild)="inputfeild($event)" [type]="'choose'"></app-edit>
+</div>

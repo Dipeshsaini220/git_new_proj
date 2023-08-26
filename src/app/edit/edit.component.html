@@ -1,0 +1,20 @@
+<div *ngIf="type == 'correct'">
+    <div *ngIf="node.type == 'folder'">
+        <i class="bi bi-folder2-open"></i>
+    </div>
+    <div *ngIf="node.type == 'file'">
+        <i class="bi bi-file-earmark"></i>
+    </div>
+</div>
+
+<div *ngIf="type == 'choose'">
+    <button (click)="infolder('folder')"><i class="bi bi-folder2-open"></i></button>
+    <button (click)="infolder('file')"><i class="bi bi-file-earmark"></i></button>
+</div>
+
+
+<div class="main_div" >
+    <input type="text" id="item-input" class="form-control" [(ngModel)]="node.name">
+    <button type="submit" (click)="inputsave()" style="color: olivedrab;"><i class="bi bi-plus-circle-fill"></i></button>
+    <button (click)="inputremove()"><i class="bi bi-trash-fill" style="color: brown;"></i></button>
+</div>

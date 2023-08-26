@@ -1,1 +1,8 @@
-<h1>Hello orld</h1>
+<h1 style="color:darkgreen">Folder Structure</h1>
+<button (click)="ontoggle()" style="background-color:darkseagreen;" class="btn btn-success">Add to Folder Structure</button>
+
+<div  *ngFor="let node of Nodes; let i=index">
+   <app-tree-node [node]="node" (outputfeild)="inputfeild($event)" ></app-tree-node>
+</div>
+
+<app-edit (outputfeild)="inputfeild($event)" [type]="'correct'" *ngIf="node.inactive"></app-edit>

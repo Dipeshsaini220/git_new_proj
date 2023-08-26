@@ -1,0 +1,5 @@
+.main_div{
+    width: fit-content;
+    display: flex;
+    border: 1px solid black;
+}
